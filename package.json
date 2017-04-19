@@ -1,1 +1,40 @@
-{     "devDependencies": {         "resume-cli": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-resume-cli",     "homepage": "https://github.com/npmtest/node-npmtest-resume-cli",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-resume-cli.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [resume-cli (v0.4.19)](https://github.com/rolandnsharp/resume-cli#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-resume-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-resume-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-resume-cli.svg)](https://travis-ci.org/npmtest/node-npmtest-resume-cli)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "resume-cli": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-resume-cli",
+    "keywords": [
+        "coverage",
+        "test",
+        "resume-cli"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_resume_cli.js",
+    "name": "npmtest-resume-cli",
+    "nameAlias": "npmtest_resume_cli",
+    "nameOriginal": "npmtest-resume-cli",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-resume-cli.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
